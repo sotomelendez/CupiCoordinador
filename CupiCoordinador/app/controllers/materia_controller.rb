@@ -1,0 +1,2 @@
+class MateriaController < ApplicationController
+end

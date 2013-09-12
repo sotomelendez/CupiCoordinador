@@ -1,0 +1,2 @@
+class SemestreController < ApplicationController
+end
