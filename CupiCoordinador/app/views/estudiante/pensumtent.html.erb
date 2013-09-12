@@ -1,0 +1,37 @@
+<div id="header">
+	<div id="menu" class="container">
+		<ul>
+			<li class="current_page_item"><%= link_to "HOME", root_path%></li>
+			<li><%= link_to "PENSUM TENTATIVO", estudiante_pensumtent_path%></li>
+			<li><a href="semestre.html" accesskey="2" title="">SEMESTRE TENTATIVO</a></li>
+			<li><%= link_to "CONSOLIDADO", coordinador_consolidado_path%></li>
+		</ul>
+	</div>
+</div>3
+<div id="logo" class="container">
+	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
+</div>
+<div id="page" class="container" align="center">
+	<div class="title">
+		<h2>Agregar materias a un pensum tentativo</h2>
+	</div>
+	<br/>
+	<%= form_tag do %>
+	<table>
+	<tr>
+	<td><%= label_tag "Materia: " %></td>
+	<td><%= text_field_tag 'materia' %></td>
+	</tr>
+	<tr>
+	<td><%= label_tag "Semestre: " %></td>
+	<td><%= text_field_tag 'semestre' %></td>
+	</tr>
+	<tr>
+	<td><%= submit_tag "Agregar" %></td>
+	</tr>
+	</table>
+	<% end %>
+</div>	
+<div id="copyright" class="container">
+	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>
+</div>

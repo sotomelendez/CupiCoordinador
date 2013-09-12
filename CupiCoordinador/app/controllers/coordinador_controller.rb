@@ -1,0 +1,4 @@
+class CoordinadorController < ApplicationController
+
+
+end
