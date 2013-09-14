@@ -1,4 +1,4 @@
-Given(/^El coordinador selecciono la materia x$/) do
+Given(/^El coordinador selecciono la materia (.+)$/) do
 
 end
 
