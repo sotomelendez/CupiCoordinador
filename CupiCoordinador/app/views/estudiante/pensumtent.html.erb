@@ -7,7 +7,7 @@
 			<li><%= link_to "CONSOLIDADO", coordinador_consolidado_path%></li>
 		</ul>
 	</div>
-</div>3
+</div>
 <div id="logo" class="container" aling="center">
 	<h1><%= link_to (image_tag 'logo.png'), root_path%></h1>
 </div>
@@ -22,25 +22,6 @@
 	<tr><td align="center">2014-20</td><td align="center">Desarrollo de Videojuegos</td>
 	</table>
 	<br/>
-	<div class="title">
-		<h2>Agregar materias a un pensum tentativo</h2>
-	</div>
-	<br/>
-	<%= form_tag do %>
-	<table>
-	<tr>
-	<td><%= label_tag "Materia: " %></td>
-	<td><%= text_field_tag 'materia' %></td>
-	</tr>
-	<tr>
-	<td><%= label_tag "Semestre: " %></td>
-	<td><%= text_field_tag 'semestre' %></td>
-	</tr>
-	<tr>
-	<td><%= submit_tag "Agregar" %></td>
-	</tr>
-	</table>
-	<% end %>
 </div>	
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>

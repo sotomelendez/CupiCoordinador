@@ -6,6 +6,8 @@ CupiCoordinador::Application.routes.draw do
 	post "coordinador/show_semestre";
 	get "estudiante/pensumtent";
 	get "estudiante/semtent";
+	post "semestre/new";
+	post "semestre/show";
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

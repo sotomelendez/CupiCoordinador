@@ -7,36 +7,54 @@
 			<li><%= link_to "CONSOLIDADO", coordinador_consolidado_path%></li>
 		</ul>
 	</div>
-</div>3
+</div>
 <div id="logo" class="container" align="center">
-	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
+	<h1><%= link_to (image_tag 'logo.png'), root_path %></h1>
 </div>
 <div id="page" class="container" align="center">
 	<div class="title">
 		<h2>Materias tentativas para un semestre:</h2>
 	</div>
 	<br/>
-	<p>Eventualmente se podr&aacute; ver.</p>
+	<table>
+	<%= form_for :semestre, url: semestre_show_path do |m| %>
+	<tr>
+	<td><%= m.label "Que semestre desea ver: " %></td>
+	<td><%= m.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
+	</tr>
+	<tr>
+	<td><%= m.label "Codigo de estudiante: " %></td>
+	<td><%= m.text_field :cod_stud %></td>
+	</tr>
+	<tr>
+	<td><%= m.submit "Ver semestre" %></td>
+	</tr>
+	<% end %>
+	</table>
 	<br/>
 	<div class="title">
 		<h2>Agregar materias a un pensum tentativo</h2>
 	</div>
 	<br/>
-	<%= form_tag do %>
 	<table>
+	<%= form_for :semestre, url: semestre_new_path do |s| %>
 	<tr>
-	<td><%= label_tag "Materia: " %></td>
-	<td><%= text_field_tag 'materia' %></td>
+	<td><%= s.label "Codigo del estudiante: " %></td>
+	<td><%= s.text_field :cod_stud %></td>
 	</tr>
 	<tr>
-	<td><%= label_tag "Semestre: " %></td>
-	<td><%= text_field_tag 'semestre' %></td>
+	<td><%= s.label "Materia: " %></td>
+	<td><%= s.collection_select :materia, @materias, :id, :nombre %></td>
 	</tr>
 	<tr>
-	<td><%= submit_tag "Agregar" %></td>
+	<td><%= s.label "Semestre: " %></td>
+	<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
 	</tr>
-	</table>
+	<tr>
+	<td><%= s.submit "Agregar" %></td>
+	</tr>
 	<% end %>
+	</table>
 </div>	
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>
