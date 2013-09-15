@@ -8,7 +8,7 @@
 #  created_at   :datetime         not null
 #
 
-class Materia < ActiveRecord::Base
+class Pensum < ActiveRecord::Base
   #attr_accessible
 
   # ============

@@ -1,9 +1,27 @@
 CupiCoordinador::Application.routes.draw do
-
+  resources :estudiante_materia_periodos
+  resources :materias
+  match 'list' ,to: 'consolidado#list', via: :all
+  get "consolidado/new"
+  get "consolidado/list"
+  get "consolidado/create"
+  get "consolidado/update"
+  get "consolidado/edit"
+  get "consolidado/destroy"
+  get "consolidado/index"
+  get "consolidado/show"
+  get "mycontroller/new"
+  get "mycontroller/create"
+  get "mycontroller/update"
+  get "mycontroller/edit"
+  get "mycontroller/destroy"
+  get "mycontroller/index"
+  get "mycontroller/show"
 	root "static_pages#index";
 	get "coordinador/consolidado";
 	get "estudiante/pensumtent";
 	get "estudiante/semtent";
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
