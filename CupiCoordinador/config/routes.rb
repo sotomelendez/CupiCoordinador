@@ -2,8 +2,8 @@ CupiCoordinador::Application.routes.draw do
 
 	root "static_pages#index";
 	get "coordinador/consolidado";
-	get "coordinador/show_materia";
-	get "coordinador/show_semestre";
+	post "coordinador/show_materia";
+	post "coordinador/show_semestre";
 	get "estudiante/pensumtent";
 	get "estudiante/semtent";
   # The priority is based upon order of creation: first created -> highest priority.
