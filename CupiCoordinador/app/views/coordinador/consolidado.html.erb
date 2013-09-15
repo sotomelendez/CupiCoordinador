@@ -7,7 +7,7 @@
 			<li><%= link_to "CONSOLIDADO", coordinador_consolidado_path%></li>
 		</ul>
 	</div>
-</div>3
+</div>
 <div id="logo" class="container">
 	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
 </div>
@@ -17,14 +17,23 @@
 			<h2>Consolidado de informaci&oacute;n</h2>
 		</div>
         <br />
-  <select id="check_list" multiple="">
-    <option selected="" value="81" label="MILK">MILK</option>
-    <option value="82" label="CHEESE">CHEESE</option>
-    <option value="83" label="DOUGHNUTS">DOUGHNUTS</option>
-  </select>
+		<table>
+		<tr><%= form_for(:consolidado, url: coordinador_show_materia_path) do |f| %>
+		<td><%= f.collection_select :materia_id, @materias, :id, :nombre %></td>
+		<td><%= f.submit "Filtrar por materia" %></td>
+		<% end %></tr>
+		<tr></tr>
+		<tr><%= form_for(:consolidado, url: coordinador_show_semestre_path) do |g| %>
+		<td><%= g.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
+		<td><%= g.submit "Filtrar por semestre" %></td>
+		<% end %></tr>
+		</table>
+		<br/>
 		<table border="1" width="800">
     	    <tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre Materia</th><th>Estudiantes</th></tr>
-	        <tr><td align="center">2014-20</td><td align="center">ISIS-4717</td><td align="center">Procesos &Aacute;giles</td><td align="center">50</td></tr>
+			<%= @resultado.each do |r| %>
+			<tr><td><%= r.id_sem %></td><td><%= r.idu %></td><td><%= r.nombre %></td><td><%= r.num_estud %></td></tr>
+			<% end %>
         </table>
 	<!--</div>-->
 </div>
