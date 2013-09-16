@@ -15,8 +15,9 @@
 	<div class="title">
 		<h2>Plan de estudios tentativo:</h2>
 	</div>
-	<table>
-	<tr><th>Semestre</th>C&oacute;digo Materia<th></th>Nombre materia<th></th></tr>
+	<br/>
+	<table border="1">
+	<tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre materia</th></tr>
 	<%= @pensum.each do |pen| %>
 	<tr><td><%= pen.id_sem %></td><td><%= pen.idu %></td><td><%= pen.nombre %></td></tr>
 	<% end %>
