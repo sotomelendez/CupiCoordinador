@@ -13,12 +13,12 @@
 </div>
 <div id="page" class="container" align="center">
 	<div class="title">
-		<h2>Semestre tentativo:</h2>
+		<h2>Plan de estudios tentativo:</h2>
 	</div>
 	<table>
 	<tr><th>Semestre</th>C&oacute;digo Materia<th></th>Nombre materia<th></th></tr>
-	<%= @semester.each do |sem| %>
-	<tr><td><%= sem.id_sem %></td><td><%= sem.idu %></td><td><%= sem.nombre %></td></tr>
+	<%= @pensum.each do |pen| %>
+	<tr><td><%= pen.id_sem %></td><td><%= pen.idu %></td><td><%= pen.nombre %></td></tr>
 	<% end %>
 	</table>
 </div>

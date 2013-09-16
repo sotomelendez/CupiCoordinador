@@ -13,13 +13,18 @@
 </div>
 <div id="page" class="container" align="center">
 	<div class="title">
-		<h2>Plan de estudios deseado:</h2>
+		<h2>Plan de estudios:</h2>
 	</div>
-	<br/>
-	<p>Eventualmente se podr&aacute; ver el real, aqu&iacute; una muestra:</p>
-	<table border="1" width="600">
-	<tr><th>Semestre</th><th>Materia</th></tr>
-	<tr><td align="center">2014-20</td><td align="center">Desarrollo de Videojuegos</td>
+	<table>
+	<%= form_for :pensum, url: estudiante_verpensum_path do |p| %>
+	<tr>
+	<td><%= p.label "Codigo de estudiante: " %></td>
+	<td><%= p.text_field :cod_stud %></td>
+	</tr>
+	<tr>
+	<td><%= p.submit "Ver pensum tentativo" %></td>
+	</tr>
+	<% end %>
 	</table>
 	<br/>
 </div>	
