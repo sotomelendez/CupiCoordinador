@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20130915021659) do
 
   create_table "estudiante_materia_periodos", force: true do |t|
@@ -40,33 +39,6 @@ ActiveRecord::Schema.define(version: 20130915021659) do
     t.string   "id_sem"
     t.datetime "created_at"
     t.datetime "updated_at"
-=======
-ActiveRecord::Schema.define(version: 20130914191550) do
-
-  create_table "estudiante_materia_periodos", id: false, force: true do |t|
-    t.integer "estudiante_id"
-    t.integer "materia_id"
-    t.integer "semestre_id"
-  end
-
-  create_table "estudiantes", force: true do |t|
-    t.string "stud_id"
-    t.string "name"
-  end
-
-  create_table "materias", force: true do |t|
-    t.string "idu"
-    t.string "nombre"
-  end
-
-  create_table "pensums", force: true do |t|
-    t.string "stud_id"
-    t.string "name"
-  end
-
-  create_table "semestres", force: true do |t|
-    t.string "sem_id"
->>>>>>> c092df93af9c36d630613b738e9bab934d390a31
   end
 
 end
