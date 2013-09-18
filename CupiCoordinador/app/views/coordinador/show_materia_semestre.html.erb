@@ -37,7 +37,7 @@
 		<br/>
 		<table border="1" width="800">
     	    <tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre Materia</th><th>Estudiantes</th></tr>
-			<%= @buscado.each do |r| %>
+			<% @buscado.each do |r| %>
 			<tr><td><%= r.id_sem %></td><td><%= r.idu %></td><td><%= r.nombre %></td><td><%= r.num_estud %></td></tr>
 			<% end %>
         </table>

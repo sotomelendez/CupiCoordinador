@@ -36,7 +36,7 @@
 		<br/>
 		<table border="1" width="800">
     	    <tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre Materia</th><th>Estudiantes</th></tr>
-			<%= @porSemestre.each do |m| %>
+			<% @porSemestre.each do |m| %>
 				<tr><td><%= m.id_sem %></td><td><%= m.idu %></td><td><%= m.nombre %></td><td><%= m.num_estud %></td></tr>
 			<% end %>
         </table>
