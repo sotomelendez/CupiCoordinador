@@ -29,6 +29,14 @@
 		<% end %></tr>
 		</table>
 		<br/>
+		<table>
+		<tr><%= form_for(:consolidado, url: coordinador_show_materia_semestre_path) do |s| %>
+		<td><%= s.collection_select :materia, @materias, :id, :nombre %></td>
+		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
+		<td><%= s.submit "Filtrar por materia Y semestre" %></td>
+		<% end %></tr>
+		</table>
+		<br/>
 		<table border="1" width="800">
     	    <tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre Materia</th><th>Estudiantes</th></tr>
 			<%= @resultado.each do |r| %>

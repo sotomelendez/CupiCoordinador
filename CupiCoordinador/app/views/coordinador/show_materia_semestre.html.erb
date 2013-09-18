@@ -9,7 +9,7 @@
 	</div>
 </div>
 <div id="logo" class="container">
-	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
+	<h1><%= link_to (image_tag 'logo.png'), root_path%></h1>
 </div>
 <div id="page" class="container" align="center">
 	<!--<div id="content" align="center">-->
@@ -18,26 +18,27 @@
 		</div>
         <br />
 		<table>
-		<tr><%= link_to "Volver", coordinador_consolidado_path%></tr>
+		<tr><%= form_for(:consolidado, url: coordinador_show_materia_path) do |f| %>
+		<td><%= f.collection_select :materia, @materias, :id, :nombre %></td>
+		<td><%= f.submit "Filtrar por materia" %></td>
+		<% end %></tr>
 		<tr></tr>
-		<tr><%= form_for(:consolidado, url: coordinador_show_materia_path) do |g| %>
-		<td><%= g.collection_select :materia, @materias, :id, :nombre %></td>
-		<td><%= g.submit "Filtrar por materia" %></td>
+		<tr><%= form_for(:consolidado, url: coordinador_show_semestre_path) do |g| %>
+		<td><%= g.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
+		<td><%= g.submit "Filtrar por semestre" %></td>
 		<% end %></tr>
 		</table>
 		<br/>
 		<table>
-		<tr><%= form_for(:consolidado, url: coordinador_show_materia_semestre_path) do |s| %>
-		<td><%= s.collection_select :materia, @materias, :id, :nombre %></td>
-		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
-		<td><%= s.submit "Filtrar por materia Y semestre" %></td>
-		<% end %></tr>
+		<tr>
+		<td><%= link_to "Volver", coordinador_consolidado_path%></td>
+		</tr>
 		</table>
 		<br/>
 		<table border="1" width="800">
     	    <tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre Materia</th><th>Estudiantes</th></tr>
-			<%= @porSemestre.each do |m| %>
-				<tr><td><%= m.id_sem %></td><td><%= m.idu %></td><td><%= m.nombre %></td><td><%= m.num_estud %></td></tr>
+			<%= @buscado.each do |r| %>
+			<tr><td><%= r.id_sem %></td><td><%= r.idu %></td><td><%= r.nombre %></td><td><%= r.num_estud %></td></tr>
 			<% end %>
         </table>
 	<!--</div>-->
