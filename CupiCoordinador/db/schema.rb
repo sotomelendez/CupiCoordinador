@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130915021659) do
+ActiveRecord::Schema.define(version: 20131003231938) do
+
+  create_table "cupos", force: true do |t|
+    t.integer  "id_materia"
+    t.integer  "num_cupos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "estudia", force: true do |t|
+    t.integer  "id_estudiante"
+    t.integer  "id_maestria"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "estudiante_materia_periodos", force: true do |t|
     t.integer  "id_estudiante"
@@ -28,9 +42,23 @@ ActiveRecord::Schema.define(version: 20130915021659) do
     t.datetime "updated_at"
   end
 
+  create_table "maestria", force: true do |t|
+    t.string   "codigo"
+    t.text     "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "materia", force: true do |t|
     t.string   "idu"
     t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materia_maestria", force: true do |t|
+    t.integer  "id_materia"
+    t.integer  "id_maestria"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
