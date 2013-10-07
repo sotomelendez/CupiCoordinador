@@ -9,20 +9,15 @@
 		</ul>
 	</div>
 </div>
-<div id="logo" class="container" align="center">
-	<h1><%= link_to (image_tag 'logo.png'), root_path %></h1>
+<div id="logo" class="container">
+	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
 </div>
-<div id="page" class="container" align="center">
-	<div class="title">
-		<h2>Plan de estudios tentativo:</h2>
+<div id="page" class="container">
+	<div id="content">
+		<div class="title">
+			<h2>Asignaci&oacute;n de Cupos</h2>
+		</div>
 	</div>
-	<br/>
-	<table border="1">
-	<tr><th>Semestre</th><th>C&oacute;digo Materia</th><th>Nombre materia</th></tr>
-	<% @pensum.each do |pen| %>
-	<tr><td><%= pen.id_sem %></td><td><%= pen.idu %></td><td><%= pen.nombre %></td></tr>
-	<% end %>
-	</table>
 </div>
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>

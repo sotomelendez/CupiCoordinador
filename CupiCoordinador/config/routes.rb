@@ -1,5 +1,6 @@
 CupiCoordinador::Application.routes.draw do
 
+	
 	root "static_pages#index";
 	get "coordinador/consolidado";
 	post "coordinador/show_materia";
@@ -10,6 +11,8 @@ CupiCoordinador::Application.routes.draw do
 	post "semestre/show";
 	post "estudiante/verpensum";
 	post "coordinador/show_materia_semestre";
+	get "asignacion/seleccionar";
+	post "asignacion/resultado";
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003231938) do
+ActiveRecord::Schema.define(version: 20131006154159) do
+
+  create_table "asignacions", force: true do |t|
+    t.integer  "id_materia"
+    t.integer  "id_estudiante"
+    t.integer  "id_semestre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cupos", force: true do |t|
     t.integer  "id_materia"
