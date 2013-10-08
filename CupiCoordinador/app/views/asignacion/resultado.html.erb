@@ -12,12 +12,23 @@
 <div id="logo" class="container">
 	<h1><%= link_to (image_tag 'logo.png'), root_path%></a></h1>
 </div>
-<div id="page" class="container">
-	<div id="content">
+<div id="page" class="container" align="center">
+	<!--<div id="content">-->
 		<div class="title">
 			<h2>Asignaci&oacute;n de Cupos</h2>
 		</div>
-	</div>
+		<br/>
+		<li><%= link_to "Volver", asignacion_seleccionar_path%></li>
+		<br/>
+		<p>Asignaci&oacute;n para la materia <% @materia.nombre %> en el semestre <% @semestre.id_sem %>:</p>
+		<br/>
+		<table border="1">
+		<tr><th>C&oacute;digo</th><th>Nombre</th><th>Programa</th></tr>
+		<% resultado.each do |elem| %>
+			<tr><td><% elem.stud_id %></td><td><% elem.name %></td><td><% elem.maest %></td></tr>
+		<% end %>
+		</table>
+	<!--</div>-->
 </div>
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>
