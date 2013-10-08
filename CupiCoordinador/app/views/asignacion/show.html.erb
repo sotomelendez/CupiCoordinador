@@ -18,8 +18,16 @@
 			<h2>Asignaci&oacute;n de Cupos</h2>
 		</div>
 		<br/>
-		<li><%= link_to "Volver", asignacion_seleccionar_path%></li>
-		<br/>
+		<%= link_to "Volver", asignacion_seleccionar_path%>
+		<br />
+		<br />
+		<p>Asignaci&oacute;n para la materia <%= @materia.idu + " - " + @materia.nombre %> en el semestre <%= @semestre.id_sem %>:</p>
+		<table border="1">
+		<tr><th>C&oacute;digo</th><th>Nombre</th><th>Programa</th></tr>
+		<% @resultado.each do |elem| %>
+			<tr><td><%= elem.stud_id %></td><td><%= elem.name %></td><td><%= elem.maest %></td></tr>
+		<% end %>
+		</table>
 	<!--</div>-->
 </div>
 <div id="copyright" class="container">

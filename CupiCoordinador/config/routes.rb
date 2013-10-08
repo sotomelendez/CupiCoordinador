@@ -13,6 +13,10 @@ CupiCoordinador::Application.routes.draw do
 	post "coordinador/show_materia_semestre";
 	get "asignacion/seleccionar";
 	post "asignacion/resultado";
+	get "asignacion/ReservarPrograma";
+	get "asignacion/ReservarOtroPrograma";
+	get "asignacion/ReservarPregrado";
+	get "asignacion/show";
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
