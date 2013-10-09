@@ -21,7 +21,7 @@
 		<table>
 		<%= form_for(:asign, url: asignacion_resultado_path) do |s| %>
 		<tr><td>Materia: </td>
-		<td><%= s.collection_select :materia, @materias, :id, :nombre %></td></tr>
+		<td><%= s.collection_select :materia, @materias, :id, :lineamateria %></td></tr>
 		<tr><td>Semestre: </td>
 		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td></tr>
 		<td><%= s.submit "Asignar cupos" %></td></tr>

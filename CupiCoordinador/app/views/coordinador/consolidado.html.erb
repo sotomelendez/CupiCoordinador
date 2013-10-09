@@ -20,7 +20,7 @@
         <br />
 		<table>
 		<tr><%= form_for(:consolidado, url: coordinador_show_materia_path) do |f| %>
-		<td><%= f.collection_select :materia, @materias, :id, :nombre %></td>
+		<td><%= s.collection_select :materia, @materias, :id, :lineamateria %></td>
 		<td><%= f.submit "Filtrar por materia" %></td>
 		<% end %></tr>
 		<tr></tr>
@@ -32,7 +32,7 @@
 		<br/>
 		<table>
 		<tr><%= form_for(:consolidado, url: coordinador_show_materia_semestre_path) do |s| %>
-		<td><%= s.collection_select :materia, @materias, :id, :nombre %></td>
+		<td><%= s.collection_select :materia, @materias, :id, :lineamateria %></td>
 		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td>
 		<td><%= s.submit "Filtrar por materia Y semestre" %></td>
 		<% end %></tr>

@@ -22,6 +22,10 @@
 		<br />
 		<br />
 		<p>Asignaci&oacute;n para la materia <%= @materia.idu + " - " + @materia.nombre %> en el semestre <%= @semestre.id_sem %>:</p>
+		<!--<br /><p>La materia tiene <%= @cupos.first.num_cupos %> cupos.</p>
+		<p>Se asignan hasta <%= (@cupos.first.num_cupos*0.5).to_i %> a estudiantes del mismo programa de la materia.</p>
+		<p>Se asignan hasta <%= (@cupos.first.num_cupos*0.3).to_i %> a estudiantes de otras maestrias.</p>
+		<p>Se asignan hasta <%= (@cupos.first.num_cupos*0.2).to_i %> a estudiantes de pregrado.</p>-->
 		<table border="1">
 		<tr><th>C&oacute;digo</th><th>Nombre</th><th>Programa</th></tr>
 		<% @resultado.each do |elem| %>
