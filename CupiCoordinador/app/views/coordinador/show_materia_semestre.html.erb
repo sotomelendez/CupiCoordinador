@@ -20,7 +20,7 @@
         <br />
 		<table>
 		<tr><%= form_for(:consolidado, url: coordinador_show_materia_path) do |f| %>
-		<td><%= s.collection_select :materia, @materias, :id, :lineamateria %></td>
+		<td><%= f.collection_select :materia, @materias, :id, :lineamateria %></td>
 		<td><%= f.submit "Filtrar por materia" %></td>
 		<% end %></tr>
 		<tr></tr>
