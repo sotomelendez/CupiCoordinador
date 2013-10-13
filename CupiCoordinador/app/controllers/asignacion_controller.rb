@@ -1,6 +1,6 @@
 class AsignacionController < ApplicationController
   def seleccionar
-  @materias=Materia.order("nombre ASC").all
+  @materias=Materia.order("idu ASC").all
   @semestres=Semestre.order("id_sem ASC").all
   end
   
@@ -46,6 +46,6 @@ class AsignacionController < ApplicationController
   def show
 	@materia=Materia.find(params[:materia].to_i)
 	@semestre=Semestre.find(params[:semestre].to_i)
-	@resultado = Asignacion.select("estudiantes.name as name, estudiantes.stud_id as stud_id, maestria.nombre as maest").joins("join estudiantes on asignacions.id_estudiante=estudiantes.id").joins("join estudia on asignacions.id_estudiante=estudia.id_estudiante").joins("join maestria on estudia.id_maestria=maestria.id").where("asignacions.id_materia=#{params[:materia].to_i} AND asignacions.id_semestre=#{params[:semestre].to_i}").order("maest, stud_id")
+	@resultado = Asignacion.select("estudiantes.name as name, estudiantes.stud_id as stud_id, maestria.codigo as cod_maest, maestria.nombre as maest").joins("join estudiantes on asignacions.id_estudiante=estudiantes.id").joins("join estudia on asignacions.id_estudiante=estudia.id_estudiante").joins("join maestria on estudia.id_maestria=maestria.id").where("asignacions.id_materia=#{params[:materia].to_i} AND asignacions.id_semestre=#{params[:semestre].to_i}").order("maest, stud_id")
   end
 end
