@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006154159) do
+ActiveRecord::Schema.define(version: 20131031200950) do
 
   create_table "asignacions", force: true do |t|
     t.integer  "id_materia"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131006154159) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "apellidos"
   end
 
   create_table "maestria", force: true do |t|
@@ -67,6 +68,13 @@ ActiveRecord::Schema.define(version: 20131006154159) do
   create_table "materia_maestria", force: true do |t|
     t.integer  "id_materia"
     t.integer  "id_maestria"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materias_vistas", force: true do |t|
+    t.integer  "id_estudiante"
+    t.integer  "id_materia"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
