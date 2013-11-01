@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031200950) do
+ActiveRecord::Schema.define(version: 20131101001525) do
 
   create_table "asignacions", force: true do |t|
     t.integer  "id_materia"
@@ -74,13 +74,20 @@ ActiveRecord::Schema.define(version: 20131031200950) do
 
   create_table "materias_vistas", force: true do |t|
     t.integer  "id_estudiante"
-    t.integer  "id_materia"
+    t.string   "cod_materia"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "semestres", force: true do |t|
     t.string   "id_sem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "semvas", force: true do |t|
+    t.integer  "id_estudiante"
+    t.integer  "sem"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
