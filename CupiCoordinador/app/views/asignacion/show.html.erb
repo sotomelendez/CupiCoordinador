@@ -25,7 +25,7 @@
 		<table border="1">
 		<tr><th>C&oacute;digo</th><th>Nombre</th><th>Programa</th></tr>
 		<% @resultado.each do |elem| %>
-			<tr><td><%= elem.stud_id %></td><td><%= elem.name %></td><td><%= elem.cod_maest + " - " + elem.maest %></td></tr>
+			<tr><td><%= elem.stud_id %></td><td><%= elem.name + " " + elem.apellidos %></td><td><%= elem.cod_maest + " - " + elem.maest %></td></tr>
 		<% end %>
 		</table>
 	<!--</div>-->
