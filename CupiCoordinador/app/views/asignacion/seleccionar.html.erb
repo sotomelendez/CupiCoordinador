@@ -22,9 +22,9 @@
 		<%= form_for(:asign, url: asignacion_resultado_path) do |s| %>
 		<tr><td>Materia: </td>
 		<td><%= s.collection_select :materia, @materias, :id, :lineamateria %></td></tr>
-		<tr><td>Semestre: </td>
-		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td></tr>
-		<td><%= s.submit "Asignar cupos" %></td></tr>
+		<!--<tr><td>Semestre: </td>
+		<td><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %></td></tr>-->
+		<tr><td></td><td><%= s.submit "Asignar cupos para el próximo semestre" %></td></tr>
 		<% end %>
 		</table>
 	<!--</div>-->
