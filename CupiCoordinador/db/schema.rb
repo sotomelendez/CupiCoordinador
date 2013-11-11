@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20131101001525) do
   create_table "estudiantes", force: true do |t|
     t.string   "stud_id"
     t.string   "name"
+    t.string   "apellidos"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "apellidos"
   end
 
   create_table "maestria", force: true do |t|
