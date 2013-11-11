@@ -1,7 +1,9 @@
-<%= javascript_tag "alert('Registrado correctamente')" %>
+
 
 <div id="page" class="container" align="center">
-	<h2><%= link_to "Volver", estudiante_semtent_path%></h2>
+        <%@mat = Materia.select("idu,nombre").where(id="#{@registro.id_materia}")%>
+	<h2>Materia <%=@mat.first.idu%> - <%=@mat.first.nombre%> registrada con Exito</h2>
+        <a href="javascript:history.back()">Volver</a>
 </div>
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013 CupiCoordinador All rights reserved.</p>

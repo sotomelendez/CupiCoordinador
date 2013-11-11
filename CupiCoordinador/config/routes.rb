@@ -10,6 +10,7 @@ CupiCoordinador::Application.routes.draw do
 	post "semestre/new";
 	post "semestre/show";
 	post "estudiante/verpensum";
+        get "estudiante/verpensum";
 	post "coordinador/show_materia_semestre";
 	get "asignacion/seleccionar";
 	post "asignacion/resultado";
