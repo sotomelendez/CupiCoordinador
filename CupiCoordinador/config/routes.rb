@@ -3,6 +3,7 @@ CupiCoordinador::Application.routes.draw do
 	
 	root "static_pages#index";
 	get "coordinador/consolidado";
+        post "coordinador/consolidado";
 	post "coordinador/show_materia";
 	post "coordinador/show_semestre";
 	get "estudiante/pensumtent";
