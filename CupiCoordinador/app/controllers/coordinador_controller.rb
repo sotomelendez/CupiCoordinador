@@ -6,9 +6,6 @@ def consolidado
 
 begin
 
-
-puts "CONNNNN========================= #{params[:fil1]}======#{params[:fil2]}"
-
 if  !params[:fil1] and !params[:fil2]
 
 @busqueda=EstudianteMateriaPeriodo.select("id_sem, id_materia,id_semestre,idu, nombre, count(*) as num_estud").joins("join materia on estudiante_materia_periodos.id_materia=materia.id").joins("join semestres on estudiante_materia_periodos.id_semestre=semestres.id").group("id_semestre, id_materia").order("id_sem, nombre")
