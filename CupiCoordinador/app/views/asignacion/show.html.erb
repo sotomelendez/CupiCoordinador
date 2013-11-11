@@ -74,9 +74,24 @@
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
+            var lsto = new Array();
+        
+         var sum = 0;
+         <% @resultado.each do |elem| %>
+		<%if @semestre.id_sem.to_i - elem.apellidos.to_i >= 400%>
+                    sum++;
+                <%end%>	
+          <% end %>
+           lsto.push(["Estudiantes","Cuenta"]);
+          lsto.push(["Resto de Estudiantes",<%=@resultado.count%> - sum]);
+          lsto.push(["Estudiantes Ultimo Semestre o Antiguos",sum]);
+          
+        var datao = google.visualization.arrayToDataTable(lsto);
+        var charto = new google.visualization.PieChart(document.getElementById('piechartt'));
+        charto.draw(datao, { backgroundColor: { fill: "#F2F2F2" } });
 
       var lst = new Array();
-      
+      lst.push(["Estudiantes","Cuenta"]);
       <% @asignaciones.each do |elemm| %>
          
     
@@ -89,20 +104,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, { backgroundColor: { fill: "#F2F2F2" } });
 
-            var lst2 = new Array();
-        
-         var sum = 0;
-         <% @resultado.each do |elem| %>
-		<%if @semestre.id_sem.to_i - elem.apellidos.to_i >= 400%>
-                    sum++;
-                <%end%>	
-          <% end %>
-          lst2.push(["Resto de Estudiantes",<%=@resultado.count%> - sum]);
-          lst2.push(["Estudiantes Ultimo Semestre o Antiguos",sum]);
-          
-        var data2 = google.visualization.arrayToDataTable([["Resto de Estudiantes",<%=@resultado.count%> - sum],["Estudiantes Ultimo Semestre o Antiguos",sum]]);
-        var chart2 = new google.visualization.PieChart(document.getElementById('piechartt'));
-        chart2.draw(data2, { backgroundColor: { fill: "#F2F2F2" } });
+      
 $('#main-slider').liquidSlider();
       }
      
