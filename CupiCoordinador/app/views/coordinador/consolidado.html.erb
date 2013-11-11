@@ -6,10 +6,12 @@
 		</div>
         <br />
 <br>
+Filtro de Busqueda:
 <%= form_for(:consolidado, url: coordinador_consolidado_path) do |s| %>
 		<input type="checkbox" name="fil1"><%= s.collection_select :materia, @materias, :id, :lineamateria %>
 		<input type="checkbox" name="fil2"><%= s.collection_select :semestre_id, @semestres, :id, :id_sem %>
-		<%= s.submit "Filtrar" %>
+                <br>
+		<%= s.submit "Buscar" %>
 		<% end %>
 <br>
 <div class="liquid-slider"  id="main-slider">
@@ -94,7 +96,7 @@
         
          var sum = 0;
          <% @cuentaantiguos.each do |elem| %>
-		<%if @semantigu.id_sem.to_i - elem.apellidos.to_i >= 400%>
+		<%if @semantigu.to_i - elem.apellidos.to_i >= 400%>
                     sum++;
                 <%end%>	
           <% end %>
